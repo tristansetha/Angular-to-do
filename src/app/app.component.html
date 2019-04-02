@@ -1,14 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>To Do List </h1>
+  <h1>Welcome, {{userName}}!</h1>
+  <form>
+    <input [(ngModel)]="userName" type="text" name="user">
+  </form>
   <h3>{{currentFocus}}</h3>
 </div>
-<h2>Here are some links to help you start: </h2>
-<form>
-  <input [(ngMode)]="userName" type="text" name="user">
-</form>
+
 <ul>
-  <li [class]="priorityColor(currentTask)" *ngFor="let currentTask of tasks">{{currentTask.description}} <button (click)="editTask(currentTask)">Edit!</button></li>
+  <li [class]="priorityColor(currentTask)" *ngFor="let currentTask of tasks">{{currentTask.description}}
+    <button (click)="editTask(currentTask)">Edit!</button></li>
 </ul>
 <h3>{{selectedTask.description}}</h3>
 <p>Task Complete? {{selectedTask.done}}</p>

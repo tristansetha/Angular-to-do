@@ -13,7 +13,7 @@ import { CompotestComponent } from './compotest/compotest.component';
     CompotestComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
     FormsModule
   ],
   providers: [],
