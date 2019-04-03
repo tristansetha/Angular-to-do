@@ -13,11 +13,11 @@ export class AppComponent {
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
   tasks: Task[] = [
-    new Task('Finish weekend Angular homework for Epicodus course', "3"),
-    new Task('Begin brainstorming possible JavaScript group projects', "2"),
-    new Task('Add README file to last few Angular repos on GitHub', "2")
+    new Task('task 1', "3"),
+    new Task('task 2', "2"),
+    new Task('task 3', "2")
   ];
-    selectedTask: Task = this.tasks[0];
+  selectedTask: Task = this.tasks[0];
   editTask(clickedTask) {
     this.selectedTask = clickedTask;
   }
