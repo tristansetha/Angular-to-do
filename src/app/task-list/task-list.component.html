@@ -1,0 +1,19 @@
+<select (change)="onChange($event.target.value)">
+  <option value="allTasks">All Tasks</option>
+  <option value="completedTasks">Completed Tasks</option>
+  <option value="incompleteTasks" selected="selected">Incomplete Tasks</option>
+</select>
+
+<ul>
+  <li [class]="priorityColor(currentTask)" *ngFor="let currentTask of childTaskList | completeness:filterByCompleteness">{{currentTask.description}} {{currentTask.priority}}
+    <input *ngIf="currentTask.done === true" type="checkbox" checked (click)="toggleDone(currentTask, false)"/>
+    <input *ngIf="currentTask.done === false" type="checkbox" (click)="toggleDone(currentTask, true)"/>
+    <button (click)="editButtonClicked(currentTask)">Edit!</button>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let currentTask of childTaskList | completeness"></li>
+</ul>
+
+<!-- Note the | character prefacing our pipe in the code above. In Angular, this character is called a pipe operator. It tell Angular to flow the data before the | operator (childTaskList) through the pipe that appears after the | operator (completeness). -->
+
